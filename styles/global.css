@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    --black: #0d114f;
+    --white:#fafafa;
+    --red: #e83f5b;
+    --light-blue: #e0ecff;
+    --blue: #3485ff;
+    --background: #f6faff;
+    --overlay: #040911;
+    --icons-details: #a5b0c1;
+
+    --grey-dark: #4d5e77;
+    --grey-blue: #a1b2cd;
+    --gray-light: #e5eaf1;
+
+    font-size: 62.5%;
+    /* calcular o rem de forma mais fácil 1º no html definir o tamanho padrão de font-size de 10px com 62.5% e agora apra usar a medida rem em qualquer outro lugar q quisermos basta dividir por 10, exemplo queremos 28px então usaremos 2.8rem e assim por diante */
+}
+
+body{
+    height: 100vh;
+    background: var(--background);
+}
+
+body, button, input, textarea{
+    /* o clamp é um intervalo de tamanho ou seja o primeiro no caso 14px significa q é o tamanho minimo q a fonte pode chegar, o padrão será o do meio, no caso 1.6rem, e o maximo que o tamanho da fonte pode ir é 2vw.*/
+    font-size:clamp(14px, 1.6rem, 2vw);
+}
