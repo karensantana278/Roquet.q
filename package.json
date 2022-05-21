@@ -1,0 +1,24 @@
+{
+  "name": "rocket.q",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karensantana278/Roquet.q.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karensantana278/Roquet.q/issues"
+  },
+  "homepage": "https://github.com/karensantana278/Roquet.q#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
