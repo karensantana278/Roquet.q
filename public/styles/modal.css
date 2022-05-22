@@ -12,7 +12,7 @@
     display: flex;
     background: rgba(4, 9, 17, .8);
 
-    /*para esconder o modal */    
+    /*para esconder o modal */   
     visibility: hidden;
     opacity: 0;
 }
