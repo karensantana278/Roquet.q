@@ -30,8 +30,8 @@
             </a>
 
             <div class="buttons">
-                <div class="button outlined" id="room-id" data-id="323243">
-                    #323243
+                <div class="button outlined" id="room-id" data-id="<%=id%>">
+                    #<%=id%>
                     <img src="/images/idsala.svg" alt="copiar numero da sala">
                 </div>
 
@@ -47,7 +47,7 @@
         <main>
             <section id="question-form">
                 <h2>Faça sua pergunta</h2>
-                <form action="">
+                <form action="/question/create/<%=id%>" method="POST">
                     <label for="question" class="sr-only">O que você quer perguntar</label>
                     <textarea name="question" id="question"
                         placeholder="O que você quer perguntar"></textarea>
@@ -66,6 +66,8 @@
                 <h2 class="sr-only">Perguntas da comunidade</h2>
 
                 <div class="questions">
+
+                    <% questions.forEach(question => { %>
                     <div class="question-wrapper">
                         <div class="question-content">
 
@@ -74,48 +76,24 @@
                             </div>
 
                             <div class="question">
-                                <p>Qual a diferença entre const, var e let no Javascript?</p>
+                                <p><%= question.title %></p>
                             </div>
                         </div>
                         <div class="actions">
-                            <a href="#" class="check" data-id="2">
+                            <a href="#" class="check" data-id="<%= question.id %>">
                                 <img src="/images/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a href="#" class="delete" data-id="2">
+                            <a href="#" class="delete" data-id="<%= question.id %>">
                                 <img src="/images/trash.svg" alt="excluir">
                                 Excluir
                             </a>
                         </div>
 
                     </div>
+                    <% }) %>
 
-                    <div class="question-wrapper">
-                        <div class="question-content">
-
-                            <div class="user">
-                                <img src="/images/user.svg" alt="user">
-                            </div>
-
-                            <div class="question">
-                                <p>O que é Javascript?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a href="#" class="check" data-id="3">
-                                <img src="/images/check.svg" alt="marcar como lida">
-                                Marcar como lida
-                            </a>
-                            <a href="#" class="delete" data-id="3">
-                                <img src="/images/trash.svg" alt="excluir">
-                                Excluir
-                            </a>
-                        </div>
-
-                        
-
-                    </div>
-
+                    <% questionsRead.forEach(questionRead => { %>
                     <div class="question-wrapper read">
                         <div class="question-content">
 
@@ -124,17 +102,18 @@
                             </div>
 
                             <div class="question">
-                                <p>O que é Typescript?</p>
+                                <p><%= questionRead.title %></p>
                             </div>
                         </div>
                         <div class="actions">
-                            <a href="#" class="check" data-id="1">
+                            <a href="#" class="check" data-id="<%= questionRead.id %>">
                                 <img src="/images/check.svg" alt="marcar como lida">
                                 Pergunta lida
                             </a>
                         </div>
-
                     </div>
+                    <% }) %>
+
                 </div>
             </section>
         </main>
